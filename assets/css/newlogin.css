@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   body{
+   
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to right, #075586, #67b9e6) !important;
+   }
+   .login-page{
+    
+    background-image: linear-gradient(to right, #075586, #67b9e6) !important;
+   }
+   .sign-in-form{
+    width: 300px;
+    box-shadow: 0 0 20px 0;
+    background: #fff;
+    padding: 20px;
+    top:50%;
+    left: 50%;
+    text-align: center;
+    position: absolute;
+    transform: translate(-50%,-50%);
+   }
+   .avatar{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top:-50px;
+    left: calc(50% - 50px);
+    box-shadow: 0 0 10px 0;
+   }
+   h1{
+    color: black;
+    margin:0;
+    padding-top: 35px;
+    font-size: 1.9rem!important;
+   }
+   .login-input-box{
+    border-radius: 20px;
+    padding: 7px 30px;
+    margin: 5px 0;
+    width: 100%;
+    border: none;
+    border-bottom: 3px solid #67b9e6;
+    outline: none;
+    background-color:transparent;
+   }
+   .sign-in-button{
+    color: white;
+   
+    width: 100%;
+    padding: 7px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 0 0 10px 0;
+    outline: none;
+    background-image:linear-gradient(to right, #075586, #67b9e6) ;
+    font-weight: bold;
+   }
+   .sign-in-button:hover{
+    border-radius: 25px;
+    background-image:linear-gradient(to right, #05456d, #94d0f0) ;
+    box-shadow:0 0 2px 0;
+    transform: translateY(-1px)
+   }
+   .sign-in-button:focus{
+    outline: none;
+   }
+   a{
+    text-decoration: none!important;
+   }
+   hr{
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 80%;
+   }
+   .or{
+    background: #fff;
+    width: 30px;
+    margin: -30px auto 10px;
+   }
+   form .fa {
+    top: 17px;
+    right: 90%;
+    color: black;
+    bottom: 0;
+    }
+    
+    .form-group i {
+    font-family: FontAwesome;
+    font-style: normal;
+    }
+    @media only screen and (max-width: 600px) {
+    body {
+   
+    background-color: lightblue;
+    }
+    }

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni List</title>
+    <style>
+        /* Reset some default styles */
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  background: #dfe9f5;
+}
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Style the alumni table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        /* Style the alumni image */
+        .alumni-image {
+            max-width: 100px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Alumni List</h2>
+
+        <!-- Alumni Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Sr. No.</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Class of</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--example-->
+                   <!-- Alumni Row 1 -->
+                   <tr>
+                    <td>" . $count . "</td>
+                    <td><img src="img/alumni1.jpg" alt="Alumni 1" class="alumni-image"></td>
+                    <td>John Doe</td>
+                    <td>2005</td>
+                    <td>john@example.com</td>
+                    <td>(123) 456-7890</td>
+                </tr>
+
+                <!-- Alumni Row 2 -->
+                <tr>
+                    <td>" . $count . "</td>
+                    <td><img src="img/alumni2.jpg" alt="Alumni 2" class="alumni-image"></td>
+                    <td>Jane Smith</td>
+                    <td>2010</td>
+                    <td>jane@example.com</td>
+                    <td>(987) 654-3210</td>
+                </tr>
+
+                <!-- Alumni Row 3 -->
+                <tr>
+                    <td>" . $count . "</td>
+                    <td><img src="img/alumni3.jpg" alt="Alumni 3" class="alumni-image"></td>
+                    <td>Bob Johnson</td>
+                    <td>2015</td>
+                    <td>bob@example.com</td>
+                    <td>(555) 123-4567</td>
+                </tr>
+                <?php
+                // Connect to your database (replace with your database details)
+                $servername = "localhost";
+                $username = "your_username";
+                $password = "your_password";
+                $dbname = "your_database_name";
+
+                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                // Check connection
+                if ($conn->connect_error) {
+                    die("Connection failed: " . $conn->connect_error);
+                }
+
+                // Fetch alumni data from the database
+                $sql = "SELECT * FROM alumni";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    $count = 1;
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $count . "</td>";
+                        echo "<td><img src='" . $row["image"] . "' alt='Alumni " . $count . "' class='alumni-image'></td>";
+                        echo "<td>" . $row["name"] . "</td>";
+                        echo "<td>" . $row["grad_year"] . "</td>";
+                        echo "<td>" . $row["email"] . "</td>";
+                        echo "<td>" . $row["phone"] . "</td>";
+                        echo "</tr>";
+                        $count++;
+                    }
+                } else {
+                    echo "<tr><td colspan='6'>No alumni found.</td></tr>";
+                }
+
+                $conn->close();
+                ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

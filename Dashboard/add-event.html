@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Event</title>
+  <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+  background: #dfe9f5;
+}
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+
+
+    form {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 5px;
+      border: 1px solid black;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    input[type="text"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+    }
+
+    select {
+      height: 34px;
+    }
+
+    button{
+      width:70px;
+      height:35px;
+      border:1px solid black;
+      border-radius: 20px;
+      background-image:linear-gradient(to right, #075586, #67b9e6);
+      font-weight: bold;
+      margin-top:30px;
+    }
+
+
+    .template{
+      width: 350px;
+      height: 150 px;
+    }
+
+    .template-grid{
+      margin-top: 40px;
+      margin-left: 40px;
+      margin-bottom: 100px;
+    }
+    .template-label{
+     margin-left: 140px;
+     margin-right: 140px;
+    }
+    .columnimage{
+      margin-top: 20px;
+    }
+  </style>
+  <!-- Include Font Awesome CSS from CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+  <h1>Add Event</h1>
+  <form action="addevent.php" method="POST" enctype="multipart/form-data">
+    <label for="title"><i class="fas fa-heading"></i> <b>Event Name</b></label>
+    <input type="text" id="title" name="title">
+
+    <label for="title"><i class="fas fa-calendar"></i> <b>Event Date</b></label>
+    <input type="text" id="date" name="date">
+    <label for="title"><i class="fas fa-clock"></i> <b>Event Time</b></label>
+    <input type="text" id="time" name="time">
+
+    <label for="author"><i class="fa-solid fa-location-dot"></i> <b>Location</b></label>
+    <input type="text" id="location" name="location">
+
+    <label for="image"><i class="fas fa-image"></i> <b>Image: </b></label>
+    <input type="file" name="choosefile" value=""><p></P>
+
+    <label for="content"><i class="fas fa-align-left"></i> <b>Description</b></label>
+    <textarea id="description" name="description" rows="7" cols="80"></textarea>
+
+
+    </select>
+
+    <a href=""> <button style="margin-left: 45%" type="submit" value="submit" id="submit" name="uploadfile">Submit</button></a>
+  </form><br><br>
+</body>
+</html>
